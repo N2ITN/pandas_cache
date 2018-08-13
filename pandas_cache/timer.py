@@ -21,13 +21,3 @@ def timeit(func):
         return result
 
     return timed
-
-
-@timeit
-def whatever():
-    from time import sleep
-    sleep(1)
-    return 'okay'
-
-
-whatever()
