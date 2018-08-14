@@ -35,6 +35,7 @@ Output on second run:
 	 | read .pd_cache/time_consuming_dataframe_operation_ace6f4.pkl
 	 > function time_consuming_dataframe_operation time: 6.0 ms
 ```
+In this example, the 25-second operation has been memoized and the results are loaded in 6ms.
 
 ## How It Works
 At runtime, the `@pd_cache` decorator :
@@ -50,5 +51,9 @@ At runtime, the `@pd_cache` decorator :
 * If the function takes input args and these are changed after a cache operation, the decorator will naively load the existing pickle. To mitigate this `pandas_cache.del_cached()` can be invoked to remove all pickled pandas objects, or alternatively the pickle file can be deleted manually.
 
 
+## Planned features
+* Automatic timing of `@pd_cache` operations.
+* `@pd_cache` detection of changes in function arguments
+* Contributions welcome!
 
 
