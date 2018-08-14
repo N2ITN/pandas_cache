@@ -7,6 +7,10 @@ This module reduces loading times for resource-intensive pandas operations drama
 
 The `@pd_cache` decorator function wraps a function that returns a pandas object. The included `@timeit` decorator is optional, and provides benchmarking times for a given function (does not execcute wrapped function more than once). The `del_cached()` function deletes all cached objects if desired.
 
+## Installation
+`pip3 install pandas_cache`
+Note: currently only supports python3.6 or greater.
+
 ## Example Usage
 
 ```
