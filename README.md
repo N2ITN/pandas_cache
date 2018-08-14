@@ -56,7 +56,7 @@ Upon running a second time the decorator:
 
 ## Planned features
 * Automatic timing of `@pd_cache` operations.
-* `@pd_cache` detection of changes in function arguments
-* Contributions welcome!
+* `@pd_cache` detection of changes in function arguments to avoid naive loading of cached results.
+* Contributions are welcome.
 
 
