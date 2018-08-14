@@ -2,7 +2,10 @@
 
 
 ## Purpose
-To memoize pandas DataFrames. The `@pd_cache` decorator function wraps a function that returns a pandas object. The `@timeit` decorator is optional, and provides benchmarking times.
+This module reduces loading times for resource-intensive pandas operations dramatically by memoizing the results of functions that return pandas DataFrames and Series. This can reduce over-dependence on jupyter notebooks for slow data operations.
+
+
+The `@pd_cache` decorator function wraps a function that returns a pandas object. The `@timeit` decorator is optional, and provides benchmarking times. The `del_cached()` function deletes all cached objects if desired.
 
 ## Example Usage
 
