@@ -30,18 +30,21 @@ Output on first run:
 	 > function time_consuming_dataframe_operation time: 2.5 s
 	 | wrote .pd_cache/time_consuming_dataframe_operation_ace6f4.pkl
 ```
+
 Output on second run:
 ```
 	 | read .pd_cache/time_consuming_dataframe_operation_ace6f4.pkl
 	 > function time_consuming_dataframe_operation time: 6.0 ms
 ```
-In this example, the 25-second operation has been memoized and the results are loaded in 6ms.
+In this example, the 2.5 second operation has been memoized and the results are loaded in 6ms.
 
 ## How It Works
 At runtime, the `@pd_cache` decorator :
 * Takes the hash of the decorated function's plain text code
 * Pickles the pandas object returned by the decorated function
-* Saves the pickle to a new `./pd_cache/` dir and includes a slice of the hash and the name of the decorated fucntion in the filename.  Upon running a second time the decorator:
+* Saves the pickle to a new `./pd_cache/` dir and includes a slice of the hash and the name of the decorated fucntion in the filename.  
+
+Upon running a second time the decorator:
 * Hashes the function code again
 * If the file already exists in the cache folder, it is loaded. 
 * If the code in the function has changed in any way, the decorator deletes the original pickle file and replaces it with the new output.
