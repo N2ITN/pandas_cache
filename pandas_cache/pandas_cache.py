@@ -73,6 +73,7 @@ def test():
 def del_cached():
     # TODO: update this to use the glob format from pd_cache to safeguard deleting arbitrary files.
     cached = os.listdir('./.pd_cache/')
+    cached = ['./.pd_cache/'+ file_name for file_name in cached]
     print(cached)
     if len(cached) > 0:
         [os.remove(x) for x in cached]
